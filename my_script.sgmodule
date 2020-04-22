@@ -28,5 +28,26 @@ zimuzu.cookie.js = type=http-request,pattern=^https?:\/\/(www\.)?rrys2019\.com\/
 zimuzu.cookie.js = type=http-request,pattern=^http:\/\/ios.zmzapi.com\/index.php.*a=(mobile_)?login,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.cookie.js
 zimuzu.js = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.js
 
+# > videoqq
+# 腾讯视频
+videoqq.cookie.js = type=http-request,pattern=^https:\/\/access.video.qq.com\/user\/auth_refresh,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.cookie.js
+videoqq.js = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.js
+
+# > v2ex
+# V2EX
+v2ex.cookie.js = type=http-request,pattern=^https:\/\/www\.v2ex\.com\/mission\/daily,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/v2ex/v2ex.cookie.js
+v2ex.js = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/v2ex/v2ex.js
+
+# > tieba
+# 百度签到
+tieba.cookie.js = type=http-request,pattern=^https?:\/\/tieba\.baidu\.com\/?.?,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.cookie.js
+tieba.js = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.js
+
+# > qqmusic
+# QQ 音乐
+qqmusic.cookie.js = type=http-request,pattern=^https:\/\/u.y.qq.com\/cgi\-bin\/musicu.fcg,requires-body=true,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qqmusic/qqmusic.cookie.js
+qqmusic.cookie.js = type=http-response,pattern=^https:\/\/u.y.qq.com\/cgi\-bin\/musicu.fcg,requires-body=true,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qqmusic/qqmusic.cookie.js
+qqmusic.js = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qqmusic/qqmusic.js
+
 [MITM]
-hostname = %APPEND% wapside.189.cn:9001, act.10010.com, m.client.10010.com, wx.10086.cn, *.rrys2019.com, ios.zmzapi.com
+hostname = %APPEND% wapside.189.cn:9001, act.10010.com, m.client.10010.com, wx.10086.cn, *.rrys2019.com, ios.zmzapi.com, *.video.qq.com, *.v2ex.com, tieba.baidu.com, *.y.qq.com
