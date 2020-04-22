@@ -1,0 +1,32 @@
+#!name=My Module
+#!desc=Special thanks: NobyDa yichahucha lhie1 chavyleung.
+#!system=ios
+
+[Script]
+# > 10000
+# 电信营业厅
+10000.cookie.js = type=http-request,pattern=^https:\/\/wapside.189.cn:9001\/api\/home\/homeInfo,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10000/10000.cookie.js
+10000.cookie.js = type=http-response,pattern=^https:\/\/wapside.189.cn:9001\/api\/home\/homeInfo,requires-body=true,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10000/10000.cookie.js
+10000.js = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10000/10000.js
+
+# > 10010
+# 中国联通
+10010.cookie.js = type=http-request,pattern=^https:\/\/act.10010.com\/SigninApp\/signin\/querySigninActivity.htm,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js
+10010.cookie.js = type=http-request,pattern=^https:\/\/act.10010.com\/SigninApp(.*?)\/signin\/daySign.do,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js
+10010.cookie.js = type=http-request,pattern=^https:\/\/m.client.10010.com\/dailylottery\/static\/(textdl\/userLogin|active\/findActivityInfo),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js
+10010.js = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.js
+
+# > 10086
+# 中国移动
+10086.cookie.js = type=http-request,pattern=^http:\/\/wx.10086.cn\/website\/taskCenter\/index\?,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.cookie.js
+10086.cookie.js = type=http-request,pattern=^http:\/\/wx.10086.cn\/website\/taskCenter\/sign\?,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.cookie.js
+10086.js = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.js
+
+# > zimuzu
+# 字幕组
+zimuzu.cookie.js = type=http-request,pattern=^https?:\/\/(www\.)?rrys2019\.com\/?.?,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.cookie.js
+zimuzu.cookie.js = type=http-request,pattern=^http:\/\/ios.zmzapi.com\/index.php.*a=(mobile_)?login,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.cookie.js
+zimuzu.js = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.js
+
+[MITM]
+hostname = %APPEND% wapside.189.cn, act.10010.com, m.client.10010.com, wx.10086.cn, *.rrys2019.com, ios.zmzapi.com
