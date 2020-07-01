@@ -3,6 +3,74 @@
 #!system=ios
 
 [Script]
+# > 52pojie checkin
+# Need to manually log in to the https://www.52pojie.cn/home.php?mod=space checkin to get cookie. If you receive a cookie success notification, you can disable this script.
+Get-Cookie.js = type=http-request,pattern=https:\/\/www\.52pojie\.cn\/home\.php\?,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js
+52pojie.js = type=cron,cronexp=0 8 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js
+
+# > Aweme Ads
+# Aweme app removes ads.
+Aweme.js = type=http-request,pattern=^https:\/\/.*\.amemv\.com\/aweme\/v.*\/(feed|post),script-path=https://Choler.github.io/Surge/Script/Aweme.js
+Aweme.js = type=http-response,pattern=^https:\/\/.*\.amemv\.com\/aweme\/v.*\/(feed|post),requires-body=true,script-path=https://Choler.github.io/Surge/Script/Aweme.js
+
+# > Bahamut Ads
+# Bahamut animation app removes ads.
+Bahamut.js = type=http-request,pattern=https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bahamut.js
+Bahamut.js = type=http-response,pattern=https:\/\/api\.gamer\.com\.tw\/mobile_app\/anime\/v3\/token\.php,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bahamut.js
+
+# > Bilibili Ads
+# Bilibili app removes ads.
+surge%20bilibili%20space.js = type=http-response,pattern=https://app.bilibili.com/x/v2/space\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20space.js
+surge%20bilibili%20tab.js = type=http-response,pattern=https://app.bilibili.com/x/resource/show/tab\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20tab.js
+surge%20bilibili%20feed.js = type=http-response,pattern=https://app.bilibili.com/x/v2/feed/index\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20feed.js
+surge%20bilibili%20account.js = type=http-response,pattern=https://app.bilibili.com/x/v2/account/mine\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20account.js
+surge%20bilibili%20view%20relate.js = type=http-response,pattern=https://app.bilibili.com/x/v2/view\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20view%20relate.js
+surge%20bilibili%20reply.js = type=http-response,pattern=https://api.bilibili.com/x/v2/reply/main\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20reply.js
+surge%20bilibili%20live.js = type=http-response,pattern=https://api.live.bilibili.com/xlive/app-room/v1/index/getInfoByRoom\?access_key,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20bilibili%20live.js
+
+# > Bilibili DailyBonus
+# When Bilibili Manga app is opened, click "My", If notification gets cookie success, you can use the check in script. because script will automatically judgment whether the cookie is updated, so you dont need to disable it manually.
+Manga.js = type=http-request,pattern=https:\/\/manga\.bilibili\.com\/.*\.User\/GetWallet,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js
+Manga.js = type=cron,cronexp=0 9 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js
+
+# > Historical price
+# Display commodity historical price.
+jd_price.js = type=http-response,pattern=^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig),requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js
+tb_price.js = type=http-request,pattern=^http://.+/amdc/mobileDispatch,requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
+tb_price.js = type=http-response,pattern=^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail,requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js
+
+# > JD DailyBonus
+# Safari浏览器打开登录 https://bean.m.jd.com ,点击签到并且出现签到日历后, 如果通知获得cookie成功, 则可以使用此签到脚本。
+JD_DailyBonus.js = type=http-request,pattern=https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+JD_DailyBonus.js = type=cron,cronexp=5 0 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js
+
+
+# > Netflix ratings
+# Display Netflix TV series and movie's IMDb ratings, Douban ratings, rotten tomato and country/region.
+nf_rating.js = type=http-request,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
+nf_rating.js = type=http-response,pattern=^https?://ios\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
+
+# > Weibo
+# Weibo app removes ads.
+wb_launch.js = type=http-response,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js
+wb_ad.js = type=http-response,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list),requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
+
+# > YouTube
+# YouTube videos removes ads.
+YouTube.js = type=http-request,pattern=^https://[\s\S]*\.googlevideo\.com/.*&(oad|ctier),script-path=https://Choler.github.io/Surge/Script/YouTube.js
+
+# > Zhihu
+# Zhihu app removes ads.
+surge%20zhihu%20feed.js = type=http-response,pattern=https://api.zhihu.com/moments/recommend,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20feed.js
+surge%20zhihu%20recommend.js = type=http-response,pattern=https://api.zhihu.com/topstory/recommend,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20recommend.js
+surge%20zhihu%20answer.js = type=http-response,pattern=https://api.zhihu.com/v4/questions,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20answer.js
+surge%20zhihu%20people.js = type=http-response,pattern=https://api.zhihu.com/people/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/onewayticket255/Surge-Script/master/surge%20zhihu%20people.js
+
+# > iQIYI Dailybonus
+# When iQiyi app is opened, click "My", If notification gets cookie success, you can use the check in script. because script will automatically judgment whether the cookie is updated, so you dont need to disable it manually.
+iQIYI_GetCookie.js = type=http-request,pattern=https?:\/\/.*\.iqiyi\.com\/.*authcookie=,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/iQIYI-DailyBonus/iQIYI_GetCookie.js
+iQIYI_DailyBonus.js = type=cron,cronexp=0 9 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/iQIYI-DailyBonus/iQIYI_DailyBonus.js
+
 # > 10000
 # 电信营业厅
 10000.cookie.js = type=http-request,pattern=^https:\/\/wapside.189.cn:9001\/api\/home\/homeInfo,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10000/10000.cookie.js
@@ -49,5 +117,40 @@ qqmusic.cookie.js = type=http-request,pattern=^https:\/\/u.y.qq.com\/cgi\-bin\/m
 qqmusic.cookie.js = type=http-response,pattern=^https:\/\/u.y.qq.com\/cgi\-bin\/musicu.fcg,requires-body=true,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qqmusic/qqmusic.cookie.js
 qqmusic.js = type=cron,cronexp=10 0 0 * * *,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qqmusic/qqmusic.js
 
+[URL Rewrite]
+# > Aweme
+^https://aweme-eagle(.*)\.snssdk\.com/aweme/v2/ https://aweme-eagle$1.snssdk.com/aweme/v1/ 302
+# > TikTok Unlock
+# Remove TikTok's regional restrictions.
+(?<=_region=)CN(?=&) JP 307
+(?<=&app_version=)15..(?=.?.?&) 1 307
+(?<=\?version_code=)15..(?=.?.?&) 1 307
+
+# > TikTok Remove watermark
+(.*video_id=\w{32})(.*watermark=)(.*) $1 302
+
+[Rule]
+# > Bilibili
+URL-REGEX,https://app.bilibili.com/x/v2/(splash|search/(defaultword|square)),REJECT
+URL-REGEX,https://api.bilibili.com/x/v2/dm/ad,REJECT
+AND,((USER-AGENT,bili*), (NOT,((DOMAIN-SUFFIX,bilibili.com))),(NOT,((DOMAIN-SUFFIX,hdslb.com)))),REJECT
+# > YouTube
+URL-REGEX,https?:\/\/.+.googlevideo.com\/ptracking\?pltype=adhost,REJECT
+URL-REGEX,https?:\/\/.+.youtube.com\/api\/stats\/ads,REJECT
+URL-REGEX,https?:\/\/.+.youtube.com\/get_midroll_,REJECT
+URL-REGEX,https?:\/\/.+.youtube.com\/pagead\/,REJECT
+URL-REGEX,https?:\/\/.+.youtube.com\/ptracking\?,REJECT
+URL-REGEX,https?:\/\/m.youtube.com\/_get_ads,REJECT
+URL-REGEX,https?:\/\/premiumyva.appspot.com\/vmclickstoadvertisersite,REJECT
+URL-REGEX,https?:\/\/s0.2mdn.net\/ads\/,REJECT
+URL-REGEX,https?:\/\/stats.tubemogul.com\/stats\/,REJECT
+URL-REGEX,https?:\/\/youtubei.googleapis.com\/.+ad_break,REJECT
+URL-REGEX,https?:\/\/youtubei.googleapis.com\/youtubei\/.+(ad|log),REJECT
+# > Zhihu
+USER-AGENT,AVOS*,REJECT-TINYGIF
+URL-REGEX,https?://www.zhihu.com/api/v4/mcn/,REJECT
+URL-REGEX,https?://api.zhihu.com/(ab|adx|xen|club|fringe|zst|commercial|ad-style-service|market/popover|search/(top|tab|preset)|.*(guide|recommendations|extended|featured-comment-ad)),REJECT
+AND,((USER-AGENT,osee2*), (NOT,((DOMAIN-SUFFIX,zhihu.com))), (NOT,((DOMAIN-SUFFIX,zhimg.com)))),REJECT-TINYGIF
+
 [MITM]
-hostname = %APPEND% wapside.189.cn:9001, act.10010.com, m.client.10010.com, wx.10086.cn, *.rrys2019.com, ios.zmzapi.com, *.video.qq.com, *.v2ex.com, tieba.baidu.com, *.y.qq.com
+hostname = %APPEND% www.52pojie.cn, *.amemv.com, *.snssdk.com, api.gamer.com.tw, www.bilibili.com, api.bilibili.com, app.bilibili.com, api.live.bilibili.com, manga.bilibili.com, api.m.jd.com, amdc.m.taobao.com, trade-acs.m.taobao.com, api.m.jd.com, ios.prod.ftl.netflix.com, *.uve.weibo.com, api.weibo.cn, mapi.weibo.com, storage.wax.weibo.com, *.googlevideo.com, *.youtube.com, youtubei.googleapis.com, api.zhihu.com, www.zhihu.com, *.iqiyi.com, *.tiktokv.com, *.byteoversea.com, *.musical.ly, *.snssdk.com, wapside.189.cn:9001, act.10010.com, m.client.10010.com, wx.10086.cn, *.rrys2019.com, ios.zmzapi.com, *.video.qq.com, *.v2ex.com, tieba.baidu.com, *.y.qq.com
