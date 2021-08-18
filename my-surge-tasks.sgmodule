@@ -20,3 +20,6 @@ Bili漫画签到 = type=cron,cronexp=0 9 * * *,wake-system=1,script-path=https:/
 
 # 快看漫画签到脚本
 快看漫画签到 = type=cron,cronexp=0 9 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/KuaiKan-DailyBonus/KKMH.js
+
+# 巴哈姆特签到脚本
+巴哈姆特签到 = type=cron,cronexp=0 8 * * *,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bahamut/BahamutDailyBonus.js,wake-system=1,timeout=300
