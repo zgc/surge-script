@@ -1,0 +1,8 @@
+#!name=DNS handoff
+#!desc=DNS toggle and disable DOH
+
+[SSID Setting]
+ROUTER:192.168.5.1 dns-server=192.168.5.1, encrypted-dns-server=off
+ROUTER:192.168.10.1 dns-server=192.168.10.1, encrypted-dns-server=off
+ROUTER:192.168.20.1 dns-server=192.168.20.1, encrypted-dns-server=off
+ROUTER:192.168.30.1 dns-server=192.168.30.1, encrypted-dns-server=off
