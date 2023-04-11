@@ -1,5 +1,6 @@
 #!name=Ponte Rule
 #!desc=Ponte Rule
+#!system=ios
 
 [Rule]
 NOT,ROUTER:192.168.5.1 IP-CIDR,192.168.5.0/24,DEVICE:MACBOOKPRO15
