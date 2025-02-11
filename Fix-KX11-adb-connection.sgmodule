@@ -1,0 +1,5 @@
+#!name=Fix KX11 adb connection
+#!desc=解决「星越L ADB」的连接问题
+
+[General]
+skip-proxy = %APPEND% 198.18.34.15
