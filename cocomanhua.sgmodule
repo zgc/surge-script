@@ -1,7 +1,0 @@
-#!name=Redirect Cocomanhua
-#!desc=302 Cocomanhua to Cocomanga
-#!system=ios
-
-[URL Rewrite]
-# Redirect Cocomanhua
-^https?:\/\/(www.)?cocomanhua\.com\/ https://www.cocomanga.com/ 302
