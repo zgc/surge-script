@@ -1,7 +1,0 @@
-#!name=Smart Rroxy Group
-#!desc=Smart Rroxy Group
-
-[Proxy Group]
-# 智能测试
-AutoTest = smart, include-other-group=Bandwagonhost
-AutoTestDN = smart, include-other-group=DN
