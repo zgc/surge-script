@@ -3,5 +3,5 @@
 
 [Proxy Group]
 # 智能测试
-🕹AutoTest = smart, include-other-group=✈️Bandwagonhost
-🕹AutoTestDN = smart, include-other-group=🍼DN
+AutoTest = smart, include-other-group=Bandwagonhost
+AutoTestDN = smart, include-other-group=DN
