@@ -1,0 +1,5 @@
+#!name=Subnet Group
+#!desc=Subnet Group
+
+[Proxy Group]
+Subnet = subnet, default = Proxy, "ROUTER:192.168.5.1" = Domestic, "ROUTER:192.168.10.1" = Domestic, "ROUTER:192.168.20.1" = Domestic, "ROUTER:192.168.30.1" = Domestic, icon-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
