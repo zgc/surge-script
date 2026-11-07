@@ -1,8 +1,8 @@
 #!name=Subnet Rule
-#!desc=Subnet Rule
+#!desc=Home: hand routing to the router (OpenClash rules). Module rules may only use DIRECT/REJECT.
 
 [Rule]
-SUBNET,ROUTER:192.168.5.1,Domestic
-SUBNET,ROUTER:192.168.10.1,Domestic
-SUBNET,ROUTER:192.168.20.1,Domestic
-SUBNET,ROUTER:192.168.30.1,Domestic
+SUBNET,ROUTER:192.168.10.1,DIRECT
+SUBNET,ROUTER:192.168.20.1,DIRECT
+SUBNET,ROUTER:192.168.30.1,DIRECT
+SUBNET,ROUTER:192.168.60.1,DIRECT
