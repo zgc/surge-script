@@ -1,0 +1,9 @@
+#!name=外出访问家庭内网
+#!desc=只在需要从外面访问 192.168.10/20/30/60 时启用；用完禁用
+#!system=ios
+
+[Rule]
+IP-CIDR,192.168.10.0/24,🏠Tailnet,no-resolve
+IP-CIDR,192.168.20.0/24,🏠Tailnet,no-resolve
+IP-CIDR,192.168.30.0/24,🏠Tailnet,no-resolve
+IP-CIDR,192.168.60.0/24,🏠Tailnet,no-resolve
