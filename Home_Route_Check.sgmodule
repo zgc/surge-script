@@ -3,4 +3,4 @@
 #!system=ios
 
 [Script]
-Home Route Check = type=generic,script-path=https://raw.githubusercontent.com/zgc/surge-script/master/home-route-check.js
+Home Route Check = type=generic,timeout=30,script-path=https://gh.qsd.onl/https://raw.githubusercontent.com/zgc/surge-script/master/home-route-check.js
