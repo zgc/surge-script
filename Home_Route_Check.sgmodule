@@ -1,0 +1,6 @@
+#!name=Home Route Check
+#!desc=显示最近一次访问 192.168.x 的请求使用的策略和规则
+#!system=ios
+
+[Script]
+Home Route Check = type=generic,script-path=https://raw.githubusercontent.com/zgc/surge-script/master/home-route-check.js
