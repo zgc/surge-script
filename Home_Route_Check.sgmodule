@@ -2,5 +2,8 @@
 #!desc=显示最近一次访问 192.168.x 的请求使用的策略和规则
 #!system=ios
 
+[Panel]
+Home Route Check = title="Home Route Check",content="打开策略选择页即可刷新",style=info,script-name=Home Route Check,update-interval=1
+
 [Script]
 Home Route Check = type=generic,timeout=30,script-path=https://gh.qsd.onl/https://raw.githubusercontent.com/zgc/surge-script/master/home-route-check.js
